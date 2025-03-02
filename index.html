@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOIP Client</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="home">
+            <h1>VOIP Client</h1>
+            <div class="input-group">
+                <input type="text" id="room" placeholder="Enter Room ID">
+                <button id="callButton" class="primary-btn">Join Call</button>
+            </div>
+            <p class="instructions">Enter the same Room ID on two devices to connect</p>
+        </div>
+        
+        <div id="call" style="display: none;">
+            <h2>Call in Progress</h2>
+            <p>Connected to room: <span id="roomDisplay"></span></p>
+            <div class="status" id="callStatus">Connecting...</div>
+            <div class="call-controls">
+                <button id="muteButton" class="control-btn">
+                    <span class="btn-text">Mute</span>
+                </button>
+                <button id="hangUpButton" class="control-btn danger">
+                    <span class="btn-text">Hang Up</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+</html> 
